@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-require "rack/file"
+begin
+  require "rack/file"
+rescue LoadError
+  require "rack"
+end
+
 
 module ServiceWorker
   module Handlers
